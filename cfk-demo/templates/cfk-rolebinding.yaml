@@ -1,0 +1,24 @@
+
+{{- range .Values.topics }}
+apiVersion: platform.confluent.io/v1beta1
+kind: ConfluentRolebinding
+metadata:
+  name: {{ printf "cluster-validation-%s" .name }}
+  namespace: {{ $.Values.namespace }}
+spec:
+  principal:
+    type: group
+    #name: {{ printf "kafka_%s_%s_%s"  }}
+    name: {{ printf "kafka_%s" .name }}
+  role: DeveloperRead
+  resourcePatterns:
+    - name: {{ .name }}
+      resourceType: Topic
+      patternType: LITERAL
+  #clustersScopeByIds:
+  #  kafkaClusterId: 
+    #schemaRegistryClusterId:
+    #ksqlClusterId:
+    #connectClusterId:
+---
+{{- end }}
