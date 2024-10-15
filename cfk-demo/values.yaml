@@ -9,7 +9,7 @@ topics:
     partitions: 1
     configs:
       cleanup.policy: "compact"
-      retention.ms: "60000"
+      retention.ms: 60000
 
   - name: example-topic-2
     replicas: 2
