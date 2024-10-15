@@ -11,6 +11,8 @@ spec:
     {{- range $key, $value := $topic.configs }}
       {{- if or (kindIs "int" $value) (kindIs "float64" $value) }}
         {{ $key }}: {{ printf "%.0f" $value | quote }}
+      {{- else if (kindIs "bool" $value) }}
+        {{ $key }}: {{ quote $value }}
       {{- else }}
         {{ $key }}: {{ $value }}
       {{- end }}
