@@ -9,7 +9,7 @@ spec:
   replicas: {{ $topic.replicas }}
   configs:
     {{- range $key, $value := $topic.configs }}
-    {{ $key }}: {{ if eq (typeOf $value) "string" }}{{ $value }}{{ else }}{{ printf "%d" $value }}{{ end }}
+    {{ $key }}: {{ if regexMatch "^[0-9]+(\\.[0-9]+)?$" (printf "%v" $value) }}{{ printf "%.0f" $value }}{{ else }}{{ $value }}{{ end }}
     {{- end }}
   kafkaClusterRef:
     name: {{ $.Values.kafka.name }}
