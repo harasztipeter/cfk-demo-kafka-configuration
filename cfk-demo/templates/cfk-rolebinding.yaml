@@ -1,3 +1,6 @@
+{{- $dummy := printf "Path: %s" .Template.Name -}}
+# Debug output
+{{ $dummy }}
 
 {{- range .Values.topics }}
 apiVersion: platform.confluent.io/v1beta1
