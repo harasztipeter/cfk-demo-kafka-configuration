@@ -9,7 +9,7 @@ spec:
   replicas: {{ $topic.replicas }}
   configs:
     {{- range $key, $value := $topic.configs }}
-    {{ $key }}: {{ $value | quote }}
+    {{ $key }}: {{ $value}}
     {{- end }}
   kafkaClusterRef:
     name: {{ $.Values.kafka.name }}
