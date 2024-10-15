@@ -70,4 +70,3 @@ topics:
       confluent.cluster.link.allow.legacy.message.format: true
       confluent.placement.constraints: ""
       message.downconversion.enable: false
-      somethinginvalid: false
