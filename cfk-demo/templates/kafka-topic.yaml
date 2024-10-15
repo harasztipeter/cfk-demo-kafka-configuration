@@ -8,9 +8,10 @@ spec:
   partitionCount: {{ $topic.partitions }}
   replicas: {{ $topic.replicas }}
   configs:
-    {{- toYaml $topic.configs | nindent 4 }}
+    {{- range $key, $value := $topic.configs }}
+    {{ $key }}: {{ $value | quote }}
+    {{- end }}
   kafkaClusterRef:
     name: {{ $.Values.kafka.name }}
     namespace: {{ $.Values.namespace }}
----
 {{- end }}
