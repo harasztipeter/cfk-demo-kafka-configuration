@@ -1,13 +1,10 @@
-#{{- $dummy := printf "Path: %s" .Template.Name -}}
-# Debug output
-#{{ $dummy }}
-
 {{- range .Values.topics }}
 apiVersion: platform.confluent.io/v1beta1
 kind: ConfluentRolebinding
 metadata:
-  name: {{ printf "cluster-validation-%s-%s" .name $.Template.Name }}
+  name: {{ printf "cluster-validation-%s" .name }}
   namespace: {{ $.Values.namespace }}
+  dummy: {{ include "build-principal-name" $ }}
 spec:
   principal:
     type: group

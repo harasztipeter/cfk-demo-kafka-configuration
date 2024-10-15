@@ -1,5 +1,4 @@
 
-
 namespace: kafka-confluent-poc
 
 kafka:
@@ -23,3 +22,7 @@ topics:
     partitions: 1
     configs:
       cleanupPolicy: delete
+
+#{{- $dummy := printf "Path: %s" $.Template.Name -}}
+# Debug output
+#{{ $dummy }}
