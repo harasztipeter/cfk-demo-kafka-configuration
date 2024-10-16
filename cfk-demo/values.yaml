@@ -7,7 +7,7 @@ topics:
   - name: example-topic-1
     replicas: 1
     partitions: 1
-    configs:
+    configs:  # configs require a string:string map!
       cleanup.policy: "compact"
       retention.ms: "60000"
 
