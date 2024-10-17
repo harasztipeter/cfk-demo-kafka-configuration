@@ -1,0 +1,10 @@
+{{- range $schema := .Values.schemas }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ printf "%s-config" $schema.name }}
+  namespace: {{ $.Values.namespace }}
+data:
+  schema: {{ $schema.schema | indent 4 }}
+---
+{{- end }}
