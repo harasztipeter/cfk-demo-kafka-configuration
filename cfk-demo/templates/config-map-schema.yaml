@@ -5,6 +5,6 @@ metadata:
   name: {{ printf "%s-config" $schema.name }}
   namespace: {{ $.Values.namespace }}
 data:
-  schema: {{ printf "%s" $schema.file | $.Files.Get | quote}}
+  schema: {{ printf "schemas/%s.json" $schema.name | $.Files.Get | quote}}
 ---
 {{- end }}
