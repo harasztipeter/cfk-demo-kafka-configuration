@@ -1,0 +1,15 @@
+{{- range $schema := .Values.schemas }}
+apiVersion: platform.confluent.io/v1beta1
+kind: Schema
+metadata:
+  name: {{ $schema.name }}
+  namespace: {{ $.Values.namespace }}
+spec:
+  data:
+    configRef: {{ printf "%s-config" $schema.name }}
+    format: json
+  schemaRegistryClusterRef:
+    name: {{ $.Values.schemaRegistry.name }}
+    namespace: {{ $.Values.namespace }}
+---
+{{- end }}
