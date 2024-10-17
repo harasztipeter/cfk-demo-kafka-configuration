@@ -8,7 +8,7 @@ schemaRegistry:
 
 schemas:
   - name: example-schema-1
-    file: "schemas/example-schema-1.json"
+  - name: example-schema-2
 
 topics:
   - name: example-topic-1
