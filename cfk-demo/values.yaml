@@ -4,7 +4,7 @@ kafka:
   name: kafka-poc
 
 schemaRegistry:
-  - name: schema-registry
+  name: schema-registry
 
 schemas:
   - name: example-schema-1
