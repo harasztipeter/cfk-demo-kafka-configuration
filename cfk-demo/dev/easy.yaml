@@ -10,17 +10,7 @@ schemaRegistry:
 
 schemas:
   - name: example-schema-1
-    schema: |
-      {
-        "namespace": "kafka-confluent-poc",
-        "type": "record",
-        "name": "Payment",
-        "fields": [
-          {"name": "id", "type": "string"},
-          {"name": "amount", "type": "double"},
-          {"name": "email", "type": "string"}
-        ]
-      }
+    file: "schemas/example-schema-1.json"
 
 topics:
   - name: example-topic-1
