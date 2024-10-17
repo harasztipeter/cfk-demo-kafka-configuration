@@ -1,10 +1,19 @@
 {
   "namespace": "kafka-confluent-poc",
-  "type": "record",
+  "type": "object",
   "name": "Payment2",
   "fields": [
-    {"name": "id2", "type": "string"},
-    {"name": "amount2", "type": "double"},
-    {"name": "email2", "type": "string"}
+    {
+      "name": "id2",
+      "type": "string"
+    },
+    {
+      "name": "amount2",
+      "type": "double"
+    },
+    {
+      "name": "email2",
+      "type": "string"
+    }
   ]
 }
