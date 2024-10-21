@@ -1,7 +1,19 @@
 #!/bin/bash
 
+# todo loop 
 
-for file in cfk-demo/dev/*; do
+# "cfk-demo/dev/*"
+ROOT_FOLDER="cfk-demo"
+
+STAGE_DEV="dev"
+STAGE_INT="int"
+STAGE_PROD="prod"
+
+DEV_DIR="${ROOT_FOLDER}/${STAGE_DEV}/*"
+INT_DIR="${ROOT_FOLDER}/${STAGE_INT}/*"
+PROD_DIR="${ROOT_FOLDER}/${STAGE_PROD}/*"
+
+for file in $DEV_DIR $INT_DIR $PROD_DIR; do
   if [ -f "$file" ]; then
     
     # extract filename
