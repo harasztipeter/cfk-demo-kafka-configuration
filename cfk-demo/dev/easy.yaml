@@ -10,7 +10,11 @@ schemaRegistry:
 
 schemas: # <TOPIC_NAME>-value if TopicNameStrategy set (default)
   - name: example-topic-1-value
+    format: json
   - name: example-topic-2-value
+    format: json
+  - name: example-topic-3-value
+    format: avro
 
 topics:
   - name: example-topic-1
