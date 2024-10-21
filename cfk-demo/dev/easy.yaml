@@ -1,3 +1,5 @@
+teamname: easy
+
 namespace: kafka-confluent-poc
 
 kafka:
