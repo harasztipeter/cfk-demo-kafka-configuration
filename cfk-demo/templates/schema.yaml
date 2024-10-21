@@ -7,7 +7,7 @@ metadata:
 spec:
   data:
     configRef: {{ printf "%s-config" $schema.name }}
-    format: json
+    format: json # TODO: Configurable? What types do we support?
   schemaRegistryClusterRef:
     name: {{ $.Values.schemaRegistry.name }}
     namespace: {{ $.Values.namespace }}

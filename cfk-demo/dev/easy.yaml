@@ -8,15 +8,15 @@ kafka:
 schemaRegistry:
   name: schema-registry
 
-schemas:
-  - name: example-schema-1
-  - name: example-schema-2
+schemas: # <TOPIC_NAME>-value if TopicNameStrategy set (default)
+  - name: example-topic-1-value
+  - name: example-topic-2-value
 
 topics:
   - name: example-topic-1
     replicas: 1
     partitions: 1
-    configs:  # configs require a string:string map!
+    configs:  # NOTE: configs require a string:string map!
       cleanup.policy: "compact"
       retention.ms: "60000"
 
