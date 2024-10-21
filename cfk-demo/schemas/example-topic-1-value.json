@@ -4,7 +4,7 @@
   "name": "Payment1",
   "fields": [
     {"name": "id", "type": "string"},
-    {"name": "amount", "type": "double"},
+    {"name": "amount", "type": "string"},
     {"name": "email", "type": "string"}
   ]
 }
