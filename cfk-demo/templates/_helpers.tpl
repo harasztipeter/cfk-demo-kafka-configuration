@@ -1,9 +1,9 @@
 {{- define "build-principal-name" -}}
-{{- if .Template.Name }}
-{{- $dummy := .Template.Name -}}
-{{ $parts := split "/" $dummy }}
-{{ $parentDir := index $parts "_0" }}
-{{ printf "kafka_%s" $parentDir }}
+{{- if .Files }}
+{{- $dummy := .Files | mustDeepCopy -}}
+{{- range $k, $v := $dummy -}}
+    {{  printf "kafka_%s" $k }}
+{{- end -}}
 {{- else }}
 {{- print ""}}
 {{- end }}
