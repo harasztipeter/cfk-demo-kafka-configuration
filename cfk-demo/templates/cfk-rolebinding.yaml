@@ -4,7 +4,7 @@ kind: ConfluentRolebinding
 metadata:
   name: {{ printf "cluster-validation-%s" .name }}
   namespace: {{ $.Values.namespace }}
-  dummy: {{ include "build-principal-name" $ }}
+  teamname: {{ $.Values.teamname }}
 spec:
   principal:
     type: group
