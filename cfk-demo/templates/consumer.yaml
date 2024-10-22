@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: consumer
+  namespace: {{ $.Values.namespace }}
+spec:
+  restartPolicy: Never
+  containers:
+    - name: consumer
+      image: consumer:latest
+      imagePullPolicy: Never
+      command: ["python3", "-u", "./consumer.py"]

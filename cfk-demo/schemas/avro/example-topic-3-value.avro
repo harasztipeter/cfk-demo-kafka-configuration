@@ -1,10 +1,28 @@
 {
-  "namespace": "kafka-confluent-poc",
   "type": "record",
-  "name": "Payment3",
+  "name": "Contact",
+  "namespace": "kafka-confluent-poc",
   "fields": [
-    {"name": "id", "type": "string"},
-    {"name": "amount", "type": "double"},
-    {"name": "email", "type": "string"}
+    {
+      "name": "username",
+      "type": "string"
+    },
+    {
+      "name": "first_name",
+      "type": "string"
+    },
+    {
+      "name": "last_name",
+      "type": "string"
+    },
+    {
+      "name": "email",
+      "type": "string"
+    },
+    {
+      "name": "date_created",
+      "type": "string",
+      "logicalType": "timestamp-millis"
+    }
   ]
 }
