@@ -8,7 +8,7 @@ kafka:
 schemaRegistry:
   name: schema-registry
 
-schemas: # <TOPIC_NAME>-value if TopicNameStrategy set (default)
+schemas: # name must be <TOPIC_NAME>-value if TopicNameStrategy is set (default)
   - name: example-topic-1-value
     format: json
   - name: example-topic-2-value
