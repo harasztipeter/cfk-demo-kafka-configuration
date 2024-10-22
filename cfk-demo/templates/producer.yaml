@@ -6,7 +6,7 @@ metadata:
 spec:
   restartPolicy: Never
   containers:
-    - name: producer
-      image: producer:latest
+    - name: cfk-demo-producer
+      image: cfk-demo-producer:latest
       imagePullPolicy: Never
       command: ["python3", "-u", "./producer.py"]

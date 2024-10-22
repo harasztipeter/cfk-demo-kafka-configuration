@@ -6,7 +6,7 @@ metadata:
 spec:
   restartPolicy: Never
   containers:
-    - name: consumer
-      image: consumer:latest
+    - name: cfk-demo-consumer
+      image: cfk-demo-consumer:latest
       imagePullPolicy: Never
       command: ["python3", "-u", "./consumer.py"]
