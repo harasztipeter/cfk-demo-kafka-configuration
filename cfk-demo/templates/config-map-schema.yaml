@@ -5,6 +5,10 @@ metadata:
   name: {{ printf "%s-config" $schema.name }}
   namespace: {{ $.Values.namespace }}
 data:
-  schema: {{ printf "schemas/%s/%s.%s" $schema.format $schema.name $schema.format | $.Files.Get | quote}}
+  schema: {{ if eq $schema.format "protobuf" }}
+      {{ printf "schemas/%s/%s.proto" $schema.format $schema.name | $.Files.Get | quote }}
+    {{ else }}
+      {{ printf "schemas/%s/%s.%s" $schema.format $schema.name $schema.format | $.Files.Get | quote }}
+    {{ end }}
 ---
 {{- end }}

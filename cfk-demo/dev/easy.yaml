@@ -15,6 +15,8 @@ schemas: # <TOPIC_NAME>-value if TopicNameStrategy set (default)
     format: json
   - name: example-topic-3-value
     format: avro
+  - name: example-topic-4-value
+    format: protobuf
 
 topics:
   - name: example-topic-1
@@ -37,3 +39,5 @@ topics:
     configs:
       cleanup.policy: "delete"
       retention.ms: "3600000"
+
+  - name: example-topic-4
