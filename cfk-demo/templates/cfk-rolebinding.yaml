@@ -1,16 +1,22 @@
+{{- $devRead := "DeveloperRead" -}}
+{{- $devWrite := "DeveloperWrite" -}}
+
 {{- range .Values.topics }}
+
+{{- $stage := include "extract-stage-name" $ | trim -}}
+{{- $principalName := printf "kafka_user_%s_%s" $.Values.teamname $stage }}
+
 apiVersion: platform.confluent.io/v1beta1
 kind: ConfluentRolebinding
 metadata:
-  name: {{ printf "cluster-validation-%s" .name }}
+  name: {{ printf "%s_%s_%s" $principalName $devRead .name }}
   namespace: {{ $.Values.namespace }}
-  teamname: {{ $.Values.teamname }}
+
 spec:
   principal:
     type: group
-    #name: {{ printf "kafka_%s_%s_%s"  }}
-    name: {{ printf "kafka_%s" .name }}
-  role: DeveloperRead
+    name: {{ $principalName }}
+  role: {{ $devRead }}
   resourcePatterns:
     - name: {{ .name }}
       resourceType: Topic

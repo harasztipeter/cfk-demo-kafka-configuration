@@ -1,8 +1,6 @@
 #!/bin/bash
 
-# todo loop 
-
-# "cfk-demo/dev/*"
+# current folder structure example "cfk-demo/dev/*"
 ROOT_FOLDER="cfk-demo"
 
 STAGE_DEV="dev"
@@ -23,7 +21,7 @@ for file in $DEV_DIR $INT_DIR $PROD_DIR; do
     TEAM_NAME=$(yq e '.teamname' "$file")
     if [ -n "$TEAM_NAME" ] && [ "$TEAM_NAME" != "$filename" ]; then
           FAILED=1
-          echo "Filename '$filename' does not match team_name $TEAM_NAME"
+          echo "Filename '$filename' does not match team-name: '$TEAM_NAME'"
     fi
 
   fi

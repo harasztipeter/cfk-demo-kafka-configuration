@@ -1,8 +1,11 @@
-{{- define "build-principal-name" -}}
+{{- define "extract-stage-name" -}}
 {{- if .Files }}
-{{- $dummy := .Files | mustDeepCopy -}}
-{{- range $k, $v := $dummy -}}
-    {{  printf "kafka_%s" $k }}
+{{- $filesCpy := .Files | mustDeepCopy -}}
+{{- range $k, $v := $filesCpy -}}
+    {{ $parts := split "/" $k }}
+    {{  $stage := index $parts "_0" }}
+    {{ printf "%s" $stage }}
+    {{- break -}}
 {{- end -}}
 {{- else }}
 {{- print ""}}
