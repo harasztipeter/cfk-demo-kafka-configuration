@@ -11,12 +11,6 @@ schemaRegistry:
 schemas: # name must be <TOPIC_NAME>-value if TopicNameStrategy is set (default)
   - name: example-topic-1-value
     format: json
-  - name: example-topic-2-value
-    format: json
-  - name: example-topic-3-value
-    format: avro
-  - name: example-topic-4-value
-    format: protobuf
 
 topics:
   - name: example-topic-1
@@ -25,19 +19,3 @@ topics:
     configs:  # NOTE: configs require a string:string map!
       cleanup.policy: "compact"
       retention.ms: "60000"
-
-  - name: example-topic-2
-    replicas: 2
-    partitions: 2
-    configs:
-      cleanup.policy: "delete"
-      max.message.bytes: "1048576"
-
-  - name: example-topic-3
-    replicas: 1
-    partitions: 1
-    configs:
-      cleanup.policy: "delete"
-      retention.ms: "3600000"
-
-  - name: example-topic-4
