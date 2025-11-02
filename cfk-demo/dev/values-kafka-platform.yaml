@@ -1,0 +1,5 @@
+
+kafka:
+  configOverrides:
+    server:
+      - log.segment.bytes=104857600
