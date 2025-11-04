@@ -5,24 +5,24 @@ namespace: kafka-confluent-poc
 kafka:
   name: kafka-poc
 
-topics:
-  - name: example-topic-1
-    replicas: 1
-    partitions: 1
-    configs:  # configs require a string:string map!
-      cleanup.policy: "compact"
-      retention.ms: "60000"
+# topics:
+#   - name: example-topic-1
+#     replicas: 1
+#     partitions: 1
+#     configs:  # configs require a string:string map!
+#       cleanup.policy: "compact"
+#       retention.ms: "60000"
 
-  - name: example-topic-2
-    replicas: 2
-    partitions: 2
-    configs:
-      cleanup.policy: "delete"
-      max.message.bytes: "1048576"
+#   - name: example-topic-2
+#     replicas: 2
+#     partitions: 2
+#     configs:
+#       cleanup.policy: "delete"
+#       max.message.bytes: "1048576"
 
-  - name: example-topic-3
-    replicas: 1
-    partitions: 1
-    configs:
-      cleanup.policy: "delete"
-      retention.ms: "3600000"
+#   - name: example-topic-3
+#     replicas: 1
+#     partitions: 1
+#     configs:
+#       cleanup.policy: "delete"
+#       retention.ms: "3600000"
